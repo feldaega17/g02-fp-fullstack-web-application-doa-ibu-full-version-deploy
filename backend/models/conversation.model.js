@@ -16,6 +16,9 @@ const conversationSchema = new mongoose.Schema(
 			},
 		],
 	},
+{
+    collection: 'doa-ibu-conversation'
+},
 	{ timestamps: true }
 );
 

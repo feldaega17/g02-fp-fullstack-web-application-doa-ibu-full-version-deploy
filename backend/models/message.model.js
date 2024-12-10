@@ -31,7 +31,9 @@ const messageSchema = new mongoose.Schema(
       enum: ['text', 'image', 'video', 'audio'],
       default: 'text', // Default to text messages
     }
-  },
+  },{
+  collection: 'doa-ibu-message'
+},
   { timestamps: true }
 );
 
