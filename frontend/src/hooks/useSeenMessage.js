@@ -12,7 +12,6 @@ const useSeenMessage = () => {
       const data = await res.json();
       if (data.error) throw new Error(data.error);
 
-      toast.success("Messages marked as read");
     } catch (error) {
       toast.error(error.message);
     }
