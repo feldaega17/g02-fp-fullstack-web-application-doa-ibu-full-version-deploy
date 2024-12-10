@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         defualt: "",
     },
+    role: {
+        type: String,
+        default: "User",
+    },
 },{
     collection: 'doa-ibu'
 },
