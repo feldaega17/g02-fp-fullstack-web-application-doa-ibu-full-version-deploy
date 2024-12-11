@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 
 const useSeenMessage = () => {
   const markMessagesAsRead = async (conversation) => {
@@ -11,9 +11,8 @@ const useSeenMessage = () => {
       });
       const data = await res.json();
       if (data.error) throw new Error(data.error);
-
     } catch (error) {
-      toast.error(error.message);
+      console.log("There is no conversation to mark as seen");
     }
   };
 

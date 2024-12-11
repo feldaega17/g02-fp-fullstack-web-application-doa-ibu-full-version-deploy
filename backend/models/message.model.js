@@ -28,13 +28,14 @@ const messageSchema = new mongoose.Schema(
     ],
     messageType: {
       type: String,
-      enum: ['text', 'image', 'video', 'audio'],
-      default: 'text', // Default to text messages
-    }
-  },{
-  collection: 'doa-ibu-message'
-},
-  { timestamps: true }
+      enum: ["text", "image", "video", "audio"],
+      default: "text", // Default to text messages
+    },
+  },
+  {
+    collection: "doa-ibu-message",
+    timestamps: true,
+  }
 );
 
 const Message = mongoose.model("Message", messageSchema);

@@ -4,20 +4,21 @@ import useConversation from "../../zustand/useConversation";
 
 const Message = ({ message }) => {
   const { authUser } = useAuthContext();
-	const { selectedConversation } = useConversation();
-	const fromMe = message.senderId === authUser._id;
-	const formattedTime = extractTime(message.createdAt);
-	const chatClassName = fromMe ? "chat-end" : "chat-start";
-	const profilePicture = fromMe ? authUser.profilePicture : selectedConversation?.profilePicture;
-	const bubbleBgColor = fromMe ? "bg-blue-500" : "";
+  const { selectedConversation } = useConversation();
+  const fromMe = message.senderId === authUser._id;
+  const formattedTime = extractTime(message.createdAt);
+  const chatClassName = fromMe ? "chat-end" : "chat-start";
+  const profilePicture = fromMe
+    ? authUser.profilePicture
+    : selectedConversation?.profilePicture;
+  const bubbleBgColor = fromMe ? "bg-blue-500" : "";
 
   const shakeClass = message.shouldShake ? "shake" : "";
 
-  const isMessageRead = message.read;
+  const isMessageRead = fromMe && message.read;
 
   return (
-    <div
-      className={`chat ${chatClassName}`}>
+    <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">
         <div className="w-10 rounded-full">
           <img alt="Profile" src={profilePicture} />
